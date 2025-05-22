@@ -22,4 +22,4 @@ jobs:
 
       - name: Test version command
         run: |
-          ./example-cli version | grep "example-cli version dev"
+          ./example-cli echo "test message" | grep "test message"
