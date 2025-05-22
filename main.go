@@ -21,7 +21,7 @@ func main() {
 		}
 		fmt.Println(os.Args[2])
 	case "version":
-		fmt.Print(version)
+		fmt.Println(version)
 	default:
 		fmt.Printf("Unknown command: %s\n", os.Args[1])
 		os.Exit(1)
