@@ -1,0 +1,31 @@
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+
+brews:
+  - name: example-cli
+    homepage: "https://github.com/spinguard/example-cli"
+    description: "Example CLI application"
+    repository:
+      owner: spinguard
+      name: homebrew-example-cli
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    commit_author:
+      name: goreleaserbot
+      email: bot@goreleaser.com
+    install: |
+      bin.install "example-cli"
+    test: |
+      assert_match "example-cli version #{version}", shell_output("#{bin}/example-cli version")
