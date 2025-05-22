@@ -1,6 +1,6 @@
 # README
 
-This project is an example go cli
+This project is an example go cli.
 
 ## Commands
 
@@ -11,7 +11,8 @@ It implements the following commands:
 
 ## Github actions
 
-- Build and Release: compile and build the executable, then create release executables for the below mentioned platforms
+- Build and Release: compile and build the executable, then create release executables for the below mentioned platforms using [GoReleaser](https://goreleaser.com), as well as the homebrew release using the [GoReleaser Homebrew Taps feature](https://goreleaser.com/customization/homebrew/?h=homebrew).  The homebrew release repo is at https://github.com/spinguard/homebrew-example-cli.git.
+
 - Test: test the executable by running the `version` command and asserting the correct release version
 
 ## Platforms supported
@@ -20,5 +21,3 @@ It implements the following commands:
 - Mac Intel
 - Linux ARM
 - Linux Intel
-
-The 
