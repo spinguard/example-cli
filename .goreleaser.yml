@@ -25,6 +25,7 @@ brews:
     commit_author:
       name: goreleaserbot
       email: bot@goreleaser.com
+    folder: Formula
     install: |
       bin.install "example-cli"
     test: |
